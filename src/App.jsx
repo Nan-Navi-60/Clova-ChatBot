@@ -72,7 +72,7 @@ function App() {
          document.getElementById('chat-body'))
         }
 
-        <ChatInput onEnter={enterHandler} sended={sended}/>
+        {!sideBar && <ChatInput onEnter={enterHandler} sended={sended}/>}
       </DefaultLayout>
     </>
   )

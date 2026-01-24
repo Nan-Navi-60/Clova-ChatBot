@@ -39,7 +39,7 @@ const ChatBody = ({ messages, loading, resetBtn }) => {
 
   return (
     <>
-        <div id="chat-body" class="chat-box-body flex flex-col" ref={chatContainerRef}>
+        <div id="chat-body" class="top-15 chat-box-body flex flex-col h-full" ref={chatContainerRef}>
             {chatList}
             {!loading && loadingSpiner()}
         </div>

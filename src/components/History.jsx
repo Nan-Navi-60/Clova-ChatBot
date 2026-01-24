@@ -2,6 +2,18 @@ import React from 'react'
 
 const History = ({reqHistory ,message}) => {
 
+    const formatDate = () => {
+        const date = new Date(message.date);
+
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+
+        return `${year}. ${month}. ${day}. ${hours}: ${minutes}`;
+    }
+
   return (
     <div
         onClick={() => reqHistory(message.text)}
@@ -11,7 +23,9 @@ const History = ({reqHistory ,message}) => {
            ml-2 mr-2 mt-2 mb-1 p-3 h-fit max-h-25'
     >
         <a className='text-lg overflow-hidden text-ellipsis w-11/12 whitespace-nowrap'>{message.text}</a>
-        <a className='text-sm text-gray-700'>{message.date}</a>
+        <a className='text-sm text-gray-700'>
+            {formatDate()}
+        </a>
     </div>
   )
 }

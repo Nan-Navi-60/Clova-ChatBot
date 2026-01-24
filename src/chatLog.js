@@ -15,9 +15,11 @@ export function saveChatLog(text) {
         date: Date.now()
     }
 
-    currentHistory.push(newMessage);
+    // currentHistory.unshift(newMessage);
 
-    localStorage.setItem("chatLog", JSON.stringify(currentHistory));
+    const newHistory = [newMessage, ...currentHistory]
+
+    localStorage.setItem("chatLog", JSON.stringify(newHistory));
 }
 
 export function loadChatLog() {

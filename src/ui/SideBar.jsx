@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import History from '../components/History'
-import { loadChatLog, allRemoveCookie } from '../chatLog'
+import { allRemoveCookie, loadChatLog } from '../chatLog'
 
 const SideBar = ({ reqHistory }) => {
 
@@ -17,7 +17,7 @@ const SideBar = ({ reqHistory }) => {
     }
 
   return (
-    <div className='absolute z-10 w-full h-full bg-sky-600 m-0 right-0 top-15'>
+    <div className='absolute overflow-y-auto bottom-0 z-10 w-full bg-sky-600 m-0 right-0 top-15'>
         <div 
          className='justify-self-end text-white bg-rose-700
          rounded-md m-2 pt-1 pb-1 pl-2 pr-2 
