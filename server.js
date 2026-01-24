@@ -19,7 +19,8 @@ app.post('/sendChat', async (request, response) => {
         const result = await chat(data);
     
         if(result.text === 0){
-            response.send("API통신 중 문제가 발생하였습니다. 1");
+            console.log("API 에러 감지: 0 반환됨");
+            return response.status(500).json({ text: "API 통신 중 문제가 발생하였습니다." });
         }
     
         let resultBubbles = result.bubbles;

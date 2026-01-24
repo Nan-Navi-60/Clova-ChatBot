@@ -6,6 +6,9 @@ import ChatInput from './components/ChatInput'
 import Reducer from './Reducer'
 import { useReducer, useState } from 'react'
 import { sendMessage } from './api'
+import SideBar from './ui/SideBar'
+import { createPortal } from 'react-dom'
+import { saveChatLog } from './chatLog'
 
 const firstConnectTime = Date.now();
 
@@ -21,8 +24,8 @@ function App() {
    useReducer(Reducer, chatList);
   
   const [loading, setLoading] = useState(true);
-
   const [sended, setSend] = useState(true);
+  const [sideBar, onSidebar] = useState(false);
 
   const getResponse = async (intputText) => {
       try{
@@ -40,6 +43,7 @@ function App() {
     dispatch({ type: "REQCHAT", text: inputText });
     setSend(false);
     setLoading(false);
+    saveChatLog(inputText);
     getResponse(inputText);
   }
 
@@ -49,13 +53,25 @@ function App() {
     setSend(true);
   }
 
+  const reqHistory = (text) => {
+    onSidebar(!sideBar);
+    enterHandler(text);
+  }
+
   return (
     <>
       <DefaultLayout>
-        <ChatHeader />
-        <ChatBody messages={state.messages} loading={loading}
-          resetBtn={() => dispatch({ type: "RESET", text: null})}
+        <ChatHeader isOpen={() => onSidebar(!sideBar)}/>
+        <ChatBody
+         messages={state.messages} loading={loading}
+         resetBtn={() => dispatch({ type: "RESET", text: null})}
         />
+
+        {sideBar &&
+         createPortal(<SideBar reqHistory={reqHistory} />,
+         document.getElementById('chat-body'))
+        }
+
         <ChatInput onEnter={enterHandler} sended={sended}/>
       </DefaultLayout>
     </>

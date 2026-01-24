@@ -10,11 +10,11 @@ const ChatInput = ({ onEnter, sended }) => {
       return;
     }else if(e.key === 'Enter'){
       e.preventDefault()
-      if(input.value === ""){        
+      if(input.value.trim() === ""){        
         setWarning(true);
       }else{
         setWarning(false);        
-        onEnter(input.value);
+        onEnter(input.value.trim());
         input.value = "";
       }
     }
