@@ -1,0 +1,482 @@
+{
+  "config": {
+    "configFile": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/playwright.config.cjs",
+    "rootDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.0",
+    "workers": 4,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:5173",
+      "timeout": 120000,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "chatbot.spec.js",
+      "file": "chatbot.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Chatbot Frontend Tests",
+          "file": "chatbot.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Case 1: Send message using Enter key",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5753,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.message').last()\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[32m- 안녕하세요\u001b[39m\n\u001b[31m+ 안녕하세요\u001b[7m! 반가워요! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m      - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.message').last()\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[32m- 안녕하세요\u001b[39m\n\u001b[31m+ 안녕하세요\u001b[7m! 반가워요! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m      - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:24:39",
+                        "location": {
+                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                          "column": 39,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[90m// We'll wait for a new message to appear.\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// We'll also check for the specific user message.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(chatMessages\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Expected Result 2: Input field is cleared\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInput)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                            "column": 39,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.message').last()\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[32m- 안녕하세요\u001b[39m\n\u001b[31m+ 안녕하세요\u001b[7m! 반가워요! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m      - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[90m// We'll wait for a new message to appear.\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// We'll also check for the specific user message.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(chatMessages\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Expected Result 2: Input field is cleared\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInput)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:24:39\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-26T14:04:59.535Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Chatbot-Frontend-T-98f2a-end-message-using-Enter-key-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                        "column": 39,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c66bd7d676c8947acb91-80ee3461664ec4c23944",
+              "file": "chatbot.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Case 2: Send message using Send button",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30033,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                            "column": 22,
+                            "line": 38
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#sendBtn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled id=\"sendBtn\">Send</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n\u001b[0m \u001b[90m 36 |\u001b[39m     \u001b[90m// Action: Type message and click Send button\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m userInput\u001b[33m.\u001b[39mfill(message)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m sendButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[90m// Expected Result 1: Message is added to the chat list\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[90m// Similar to the first test, wait for the message and then check content.\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:38:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-26T14:04:59.522Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Chatbot-Frontend-T-b68a5-d-message-using-Send-button-chromium/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c66bd7d676c8947acb91-524a584b67546638db1e",
+              "file": "chatbot.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Case 1: Send message using Enter key",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 6462,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.message').last()\nExpected: \u001b[32m\"안녕하세요\"\u001b[39m\nReceived: \u001b[31m\"반갑습니다. 궁금하신점 있나요?\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">반갑습니다. 궁금하신점 있나요?</a>\u001b[22m\n\u001b[2m      - unexpected value \"반갑습니다. 궁금하신점 있나요?\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.message').last()\nExpected: \u001b[32m\"안녕하세요\"\u001b[39m\nReceived: \u001b[31m\"반갑습니다. 궁금하신점 있나요?\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">반갑습니다. 궁금하신점 있나요?</a>\u001b[22m\n\u001b[2m      - unexpected value \"반갑습니다. 궁금하신점 있나요?\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:24:39",
+                        "location": {
+                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                          "column": 39,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[90m// We'll wait for a new message to appear.\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// We'll also check for the specific user message.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(chatMessages\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Expected Result 2: Input field is cleared\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInput)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                            "column": 39,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.message').last()\nExpected: \u001b[32m\"안녕하세요\"\u001b[39m\nReceived: \u001b[31m\"반갑습니다. 궁금하신점 있나요?\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">반갑습니다. 궁금하신점 있나요?</a>\u001b[22m\n\u001b[2m      - unexpected value \"반갑습니다. 궁금하신점 있나요?\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[90m// We'll wait for a new message to appear.\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// We'll also check for the specific user message.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(chatMessages\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Expected Result 2: Input field is cleared\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInput)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:24:39\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-26T14:04:59.542Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Chatbot-Frontend-T-98f2a-end-message-using-Enter-key-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                        "column": 39,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c66bd7d676c8947acb91-794dd85d3c9ea3236c6b",
+              "file": "chatbot.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Case 2: Send message using Send button",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 30038,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                            "column": 22,
+                            "line": 38
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#sendBtn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled id=\"sendBtn\">Send</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    51 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[0m \u001b[90m 36 |\u001b[39m     \u001b[90m// Action: Type message and click Send button\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m userInput\u001b[33m.\u001b[39mfill(message)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m sendButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[90m// Expected Result 1: Message is added to the chat list\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[90m// Similar to the first test, wait for the message and then check content.\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:38:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-26T14:04:59.540Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Chatbot-Frontend-T-b68a5-d-message-using-Send-button-firefox/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c66bd7d676c8947acb91-c0336850782190856659",
+              "file": "chatbot.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Case 1: Send message using Enter key",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5751,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.message').last()\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[32m- 안녕하세요\u001b[39m\n\u001b[31m+ 안녕하세요\u001b[7m! 반가워요! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m      - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.message').last()\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[32m- 안녕하세요\u001b[39m\n\u001b[31m+ 안녕하세요\u001b[7m! 반가워요! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m      - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:24:39",
+                        "location": {
+                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                          "column": 39,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[90m// We'll wait for a new message to appear.\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// We'll also check for the specific user message.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(chatMessages\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Expected Result 2: Input field is cleared\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInput)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                            "column": 39,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.message').last()\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[32m- 안녕하세요\u001b[39m\n\u001b[31m+ 안녕하세요\u001b[7m! 반가워요! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.message').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    7 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m      - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[90m// We'll wait for a new message to appear.\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// We'll also check for the specific user message.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(chatMessages\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Expected Result 2: Input field is cleared\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInput)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:24:39\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-26T14:05:06.469Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Chatbot-Frontend-T-98f2a-end-message-using-Enter-key-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                        "column": 39,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c66bd7d676c8947acb91-e4b7bdf840487811b86c",
+              "file": "chatbot.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Case 2: Send message using Send button",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 30042,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                            "column": 22,
+                            "line": 38
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#sendBtn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled id=\"sendBtn\">Send</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[0m \u001b[90m 36 |\u001b[39m     \u001b[90m// Action: Type message and click Send button\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m userInput\u001b[33m.\u001b[39mfill(message)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m sendButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[90m// Expected Result 1: Message is added to the chat list\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[90m// Similar to the first test, wait for the message and then check content.\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:38:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-26T14:05:08.020Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Chatbot-Frontend-T-b68a5-d-message-using-Send-button-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c66bd7d676c8947acb91-4ba849c37275bef7e49e",
+              "file": "chatbot.spec.js",
+              "line": 30,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-26T14:04:58.696Z",
+    "duration": 39518.981,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}
