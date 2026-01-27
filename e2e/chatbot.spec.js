@@ -4,137 +4,132 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-// ✅ Case 1: 엔터키 전송 (성공 예상)
-test('Case 1: Send message using Enter key', async ({ page }) => {
+// ✅ Case 1: 엔터키 전송 + 봇 응답 확인
+test('Case 1: Send message using Enter key and check bot response', async ({ page }) => {
   const message = '안녕하세요';
   await page.fill('textarea#userInput', message);
   await page.press('textarea#userInput', 'Enter');
+  
+  // 1. 내 메시지가 올라갔는지 확인
   await expect(page.locator('a.message.user').last()).toHaveText(message);
+  
+  // 2. 입력창 비워졌는지 확인
   await expect(page.locator('textarea#userInput')).toHaveValue('');
+
+  // 3. [추가됨] 챗봇의 답장이 올 때까지 기다리고 확인 (최대 10초 대기)
+  const botMessage = page.locator('a.message.bot').last();
+  await expect(botMessage).toBeVisible({ timeout: 10000 });
 });
 
 // ❌ Case 2: 전송 버튼 (소스 코드 버그로 실패 예상)
 test('Case 2: Send message using send button', async ({ page }) => {
   const message = '반갑습니다';
   await page.fill('textarea#userInput', message);
-  // ChatInput.jsx에 onClick 핸들러가 없으므로 여기서 타임아웃 발생 예상
   await page.click('button#sendBtn'); 
   await expect(page.locator('a.message.user').last()).toHaveText(message);
 });
 
-// ✅ Case 3: 전체 초기화 (로직 수정)
-// test('Case 3: Clear all chat messages', async ({ page }) => {
-//   // 메시지 2개 전송
-//   await page.fill('textarea#userInput', 'msg1');
-//   await page.press('textarea#userInput', 'Enter');
-//   await page.waitForTimeout(500); 
-//   await page.fill('textarea#userInput', 'msg2');
-//   await page.press('textarea#userInput', 'Enter');
-
-//   // '대화 기록 초기화' 버튼이 나타날 때까지 대기 (ChatBody.jsx 조건: showButton && loading)
-//   // 주의: 소스 코드 로직이 이상함 (loading일 때만 버튼 보임). 테스트를 위해 강제로 조건을 맞춤.
-
-//   // const clearBtn = page.locator('button', { hasText: '대화 기록 초기화' });
-//   const clearBtn = page.getByTestId('reset-btn'); 
-  
-//   // 버튼이 보이면 클릭, 안 보이면 스킵 (소스 코드 버그 가능성)
-//   if (await clearBtn.isVisible({ timeout: 5000 })) {
-//     await clearBtn.click();
-//     await expect(page.locator('a.message.user')).toHaveCount(0);
-//   } else {
-//     console.log('Case 3 Skipped: 초기화 버튼이 나타나지 않음 (소스코드 로직 점검 필요)');
-//   }
-// });
-
-// ✅ Case 4: 재요청 방지 (셀렉터 단순화)
-test('Case 4: Cannot re-request until response is received', async ({ page }) => {
-  await page.fill('textarea#userInput', 'Request');
+// ✅ Case 4: 재요청 방지
+test('Case 4: Prevent duplicate requests via Enter key during loading', async ({ page }) => {
+  // 1. 첫 번째 메시지 전송
+  await page.fill('textarea#userInput', '첫 번째 메시지');
   await page.press('textarea#userInput', 'Enter');
 
-  // 전송 직후 버튼이 disabled 되는지 확인
-  const sendBtn = page.locator('button#sendBtn');
+  // 2. 즉시 두 번째 메시지 입력 후 엔터 시도
+  await page.fill('textarea#userInput', '두 번째 메시지 (무시되어야 함)');
+  await page.press('textarea#userInput', 'Enter');
+
+  // 3. 봇의 응답이 오기 전까지 유저 메시지는 1개여야 함
+  const userMessages = page.locator('a.message.user');
+  await expect(userMessages).toHaveCount(1);
   
-  // 응답이 너무 빠르면 disabled 상태를 못 잡을 수 있음.
-  // sended 상태가 true가 되는지 간접적으로 확인 (입력창 엔터가 막히는지)
-  await expect(sendBtn).toBeDisabled();
+  // 4. (참고) 버튼도 비활성화 상태인지 함께 체크
+  await expect(page.locator('button#sendBtn')).toBeDisabled();
 });
 
 // ✅ Case 5: 로딩 표시 
 test('Case 5: Loading indicator displayed', async ({ page }) => {
   await page.fill('textarea#userInput', 'Loading Check');
   await page.press('textarea#userInput', 'Enter');
-
-  // 스피너를 특정하기 어렵다면, 봇의 메시지가 '즉시' 뜨지 않고 '기다려야' 뜨는지를 확인
-  // 혹은 스피너가 포함된 봇 메시지 영역(a.message.bot)이 생기는 것을 확인
   const botMessage = page.locator('a.message.bot').last();
-  
-  // 봇 메시지(혹은 스피너)가 화면에 나타날 때까지 대기
   await expect(botMessage).toBeVisible({ timeout: 10000 });
 });
 
-// ✅ Case 6: 시간 표시 (정규식 체크)
-test('Case 6: Timestamp displayed', async ({ page }) => {
+// ✅ Case 6: 시간 표시 (현재 시각 정밀 검증)
+test('Case 6: Timestamp matches current time', async ({ page }) => {
   await page.fill('textarea#userInput', 'Time Check');
   await page.press('textarea#userInput', 'Enter');
 
-  // 봇 응답 대기
+  // 봇 응답 대기 (시간이 렌더링될 때까지)
   await expect(page.locator('a.message.bot').last()).toBeVisible();
 
-  // 사용자 메시지 옆 시간 (Tailwind 클래스로 찾기)
-  const timeLabel = page.locator('a.text-xs.text-gray-400').first(); // 첫 번째 메시지 시간
-  await expect(timeLabel).toBeVisible();
+  // 1. 현재 시스템 시간 구하기
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
   
-  const timeText = await timeLabel.textContent();
-  // "21: 58" 처럼 공백이 있을 수도 있으므로 유연한 정규식
-  expect(timeText).toMatch(/\d{2}:\s?\d{2}/);
+  // ChatItems.jsx의 포맷: "HH: MM" (중간에 띄어쓰기 주의!)
+  const expectedTime = `${hours}: ${minutes}`;
+
+  // 2. 화면의 시간 텍스트 가져오기
+  const timeLabel = page.locator('a.text-xs.text-gray-400').last();
+  await expect(timeLabel).toBeVisible();
+  const actualTime = await timeLabel.textContent();
+
+  // 3. 비교 (테스트 도중 1분이 지날 수 있으므로, 현재 분 or 1분 전까지 허용)
+  // 예: 12:00에 보냈는데 테스트 도중 12:01이 될 수 있음
+  const currentMinute = parseInt(minutes);
+  const prevMinute = currentMinute === 0 ? 59 : currentMinute - 1;
+  const prevMinutesStr = String(prevMinute).padStart(2, '0');
+  const expectedTimePrev = `${hours}: ${prevMinutesStr}`;
+
+  // "현재 시간" 또는 "1분 전 시간" 중 하나와 일치하면 통과
+  console.log(`Expected: "${expectedTime}" or "${expectedTimePrev}", Actual: "${actualTime}"`);
+  expect([expectedTime, expectedTimePrev]).toContain(actualTime);
 });
 
-// ✅ Case 7: 스크롤 자동화 (evaluate 사용)
-test('Case 7: Auto-scroll to bottom', async ({ page }) => {
-  // 메시지 10개 빠르게 전송
-  for (let i = 0; i < 10; i++) {
+// ✅ Case 7: 스크롤 자동화 (픽셀 단위 검증)
+test('Case 7: Auto-scroll to bottom (Pixel check)', async ({ page }) => {
+  // 메시지를 충분히 많이 보내 스크롤 생성
+  for (let i = 0; i < 8; i++) {
     await page.fill('textarea#userInput', `msg ${i}`);
     await page.press('textarea#userInput', 'Enter');
-    await page.waitForTimeout(1000);
+    // 애니메이션 기다림 (중요)
+    await page.waitForTimeout(500); 
   }
 
   const chatBody = page.locator('#chat-body');
-  
-  // 스크롤이 바닥 근처인지 확인 (오차 범위 50px)
-  const isAtBottom = await chatBody.evaluate((el) => {
-    return el.scrollHeight - el.scrollTop <= el.clientHeight + 100;
+
+  // 스크롤 위치 계산 (JavaScript 실행)
+  const distanceToBottom = await chatBody.evaluate((el) => {
+    // scrollHeight(전체 높이) - scrollTop(현재 스크롤 위치) - clientHeight(보이는 창 높이)
+    // 이 값이 0에 가까워야 바닥에 닿은 것임
+    return el.scrollHeight - el.scrollTop - el.clientHeight;
   });
-  
-  expect(isAtBottom).toBeTruthy();
+
+  console.log(`Distance to bottom: ${distanceToBottom}px`);
+
+  // 오차 범위 5px 이내인지 확인 (브라우저 줌이나 렌더링 오차 고려)
+  expect(Math.abs(distanceToBottom)).toBeLessThan(5);
 });
 
-// ✅ Case 8: 쉬프트 엔터 (성공 예상)
+// ✅ Case 8: 쉬프트 엔터
 test('Case 8: Shift+Enter creates new line', async ({ page }) => {
   const input = page.locator('textarea#userInput');
+  
+  // 1. 첫 줄 입력 (fill은 내용을 덮어씀)
   await input.fill('Line 1');
+  
+  // 2. 줄바꿈
   await input.press('Shift+Enter');
+  
+  // 3. 두 번째 줄 입력 (type은 키보드 치듯 이어씀)
+  // Q: 왜 type인가요? -> fill을 쓰면 앞의 'Line 1\n'이 지워지고 'Line 2'만 남기 때문입니다!
   await input.type('Line 2');
 
+  // 4. 값 검증
   await expect(input).toHaveValue(/Line 1\nLine 2/);
-  // 메시지가 전송되지 않았어야 함 (유저 메시지 0개)
+  
+  // 5. 전송되지 않았는지 확인 (유저 메시지 0개)
   await expect(page.locator('a.message.user')).toHaveCount(0);
 });
-
-// ✅ Case 9, 10: History 
-// test('Case 9 & 10: History Interaction', async ({ page }) => {
-//   // 1. History 열기
-//   await page.click('img[alt="scroll"]');
-
-//   // 2. 사이드바가 열렸는지 확인 (data-testid 사용)
-//   const sidebar = page.getByTestId('history-sidebar');
-//   await expect(sidebar).toBeVisible();
-
-//   // 3. 기록 모두 삭제 버튼 클릭 (data-testid 사용)
-//   const clearBtn = page.getByTestId('clear-history-btn');
-//   if (await clearBtn.isVisible()) {
-//       await clearBtn.click();
-//       // 삭제 검증 로직...
-//   } else {
-//       console.log('삭제 버튼을 찾을 수 없습니다.');
-//   }
-// });

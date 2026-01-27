@@ -1,68 +1,74 @@
-// scripts/analyze-test-results.cjs
 const fs = require('fs');
 const path = require('path');
 
 const resultsFilePath = path.join(process.cwd(), 'test-results.json');
 
 function generateSummaryAndSuggestions() {
-  if (!fs.existsSync(resultsFilePath)) {
-    console.error('❌ test-results.json 파일을 찾을 수 없습니다.');
-    return null;
-  }
+  if (!fs.existsSync(resultsFilePath)) return null;
 
   try {
     const rawData = fs.readFileSync(resultsFilePath, 'utf8');
     const results = JSON.parse(rawData);
 
-    let totalTests = 0;
-    let passedTests = 0;
-    let failedTests = 0;
-    const failureDetails = [];
+    const resultsByFile = {};
+    let overallTotal = 0, overallPassed = 0, overallFailed = 0;
 
-    // JSON 구조 순회
-    results.suites.forEach(suite => {
-      suite.specs.forEach(spec => {
-        spec.tests.forEach(test => {
-          totalTests++;
-          
-          // [핵심 수정] test.status 대신 실제 실행 결과(results 배열)를 확인해야 함
-          // results 배열의 마지막 실행 결과가 최종 상태임
-          const lastResult = test.results[test.results.length - 1];
-          const status = lastResult ? lastResult.status : 'unknown';
+    // 중첩된 테스트 구조를 끝까지 파고드는 재귀 함수
+    function walkSuite(suite, fileData) {
+      if (suite.specs) {
+        suite.specs.forEach(spec => {
+          spec.tests.forEach(test => {
+            fileData.total++;
+            overallTotal++;
+            const lastResult = test.results[test.results.length - 1];
+            const status = lastResult ? lastResult.status : 'unknown';
 
-          if (status === 'passed') {
-            passedTests++;
-          } else {
-            failedTests++;
-            // 에러 메시지 수집
-            const errors = lastResult.errors ? lastResult.errors.map(err => err.message).join('\n') : 'No error message';
-            failureDetails.push({
-              title: spec.title,
-              errors: errors
-            });
-          }
+            if (status === 'passed') {
+              fileData.passed++;
+              overallPassed++;
+            } else {
+              fileData.failed++;
+              overallFailed++;
+              fileData.failures.push({
+                title: spec.title,
+                error: lastResult.errors?.[0]?.message || 'No error'
+              });
+            }
+          });
         });
-      });
-    });
-
-    // 슬랙 메시지 생성
-    const statusEmoji = failedTests > 0 ? '❌' : '✅';
-    let report = `${statusEmoji} *Playwright UI 자동화 테스트 결과*\n\n`;
-    report += `📊 *요약*\n• 전체: ${totalTests} | 성공: ${passedTests} | 실패: ${failedTests}\n\n`;
-
-    if (failedTests > 0) {
-      report += `🔍 *실패 상세*\n`;
-      failureDetails.forEach(detail => {
-        report += `- *${detail.title}*\n\`\`\`${detail.errors.substring(0, 100)}...\`\`\`\n`;
-      });
-    } else {
-      report += `🎉 모든 테스트를 통과했습니다!`;
+      }
+      // 하위 스위트(describe 블록 등)가 있다면 다시 탐색
+      if (suite.suites) {
+        suite.suites.forEach(sub => walkSuite(sub, fileData));
+      }
     }
 
-    return report;
+    results.suites.forEach(suite => {
+      const fileName = suite.file || 'Unknown File';
+      if (!resultsByFile[fileName]) {
+        resultsByFile[fileName] = { total: 0, passed: 0, failed: 0, failures: [] };
+      }
+      walkSuite(suite, resultsByFile[fileName]);
+    });
 
+    // 슬랙 메시지 구성
+    // TODO
+    const statusEmoji = overallFailed > 0 ? '❌' : '✅';
+    let report = `${statusEmoji} *Playwright UI 자동화 테스트 결과*\n\n`;
+    report += `📊 *전체 요약: 총 ${overallTotal}개 TC*\n• 성공: ${overallPassed} | 실패: ${overallFailed}\n\n`;
+
+    Object.keys(resultsByFile).forEach(file => {
+      const stats = resultsByFile[file];
+      report += `${stats.failed > 0 ? '🔺' : '🔹'} *${file}*\n`;
+      report += `  └  총 ${stats.total}개 중 ${stats.passed}개 성공\n`;
+      if (stats.failed > 0) {
+        report += `  ⚠️ _실패 건: ${stats.failures.map(f => f.title).join(', ')}_\n`;
+      }
+      report += `\n`;
+    });
+
+    return report;
   } catch (err) {
-    console.error('❌ 리포트 생성 중 에러:', err.message);
     return `❌ 리포트 생성 실패: ${err.message}`;
   }
 }
