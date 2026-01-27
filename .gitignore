@@ -29,3 +29,10 @@ dist-ssr
 .env.test.local
 .env.production.local
 .env.local
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
