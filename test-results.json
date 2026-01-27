@@ -1,0 +1,413 @@
+{
+  "config": {
+    "configFile": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/playwright.config.js",
+    "rootDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.0",
+    "workers": 4,
+    "webServer": {
+      "command": "npm run start-servers",
+      "url": "http://localhost:5173",
+      "timeout": 120000,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "chatbot.spec.js",
+      "file": "chatbot.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Case 1: Send message using Enter key",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 773,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:42:59.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-66c185d1c67fb7fbadb1",
+          "file": "chatbot.spec.js",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "Case 2: Send message using send button",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 30021,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
+                        "column": 14,
+                        "line": 21
+                      },
+                      "message": "Error: page.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button#sendBtn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled id=\"sendBtn\">Send</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n\u001b[0m \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'textarea#userInput'\u001b[39m\u001b[33m,\u001b[39m message)\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m   \u001b[90m// ChatInput.jsx에 onClick 핸들러가 없으므로 여기서 타임아웃 발생 예상\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button#sendBtn'\u001b[39m)\u001b[33m;\u001b[39m \n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'a.message.user'\u001b[39m)\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:21:14\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:42:59.340Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Case-2-Send-message-using-send-button-chromium/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-9042a427c575d2d641eb",
+          "file": "chatbot.spec.js",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "Case 3: Clear all chat messages",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1274,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Case 3 Skipped: 초기화 버튼이 나타나지 않음 (소스코드 로직 점검 필요)\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:42:59.360Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-8045c7c5a85279bfef90",
+          "file": "chatbot.spec.js",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "Case 4: Cannot re-request until response is received",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 833,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:42:59.340Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-1e409782adefdb8a202c",
+          "file": "chatbot.spec.js",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "Case 5: Loading indicator displayed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 425,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:43:00.503Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-1ce308e0d2fca48570a6",
+          "file": "chatbot.spec.js",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "Case 6: Timestamp displayed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 455,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:43:00.543Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-a170751eda90ded4c49a",
+          "file": "chatbot.spec.js",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "Case 7: Auto-scroll to bottom",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10765,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:43:00.941Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-b40b3b79197bc8344026",
+          "file": "chatbot.spec.js",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "Case 8: Shift+Enter creates new line",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 459,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:43:00.989Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-1a84e4245b29d245561d",
+          "file": "chatbot.spec.js",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "Case 9 & 10: History Interaction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 707,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-27T11:43:01.015Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-c047148311a1149200be",
+          "file": "chatbot.spec.js",
+          "line": 124,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-27T11:42:57.601Z",
+    "duration": 32172.033,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

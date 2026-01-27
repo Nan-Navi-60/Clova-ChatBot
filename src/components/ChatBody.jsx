@@ -44,15 +44,19 @@ const ChatBody = ({ messages, loading, resetBtn }) => {
             {!loading && loadingSpiner()}
         </div>
         {showButton && loading && (
-        <button 
-          onClick={() => {
-            resetBtn();
-            setShowButton(false);
-          }}
-          className="bottom-5 bg-blue-500 text-white p-2 rounded-full shadow-lg transition-opacity hover:bg-blue-600 m-2"
-        >
-          대화 기록 초기화
-        </button>
+        <div data-testid="reset-btn">
+
+          <button 
+            onClick={() => {
+              resetBtn();
+              setShowButton(false);
+            }}
+            className="bottom-5 bg-blue-500 text-white p-2 rounded-full shadow-lg transition-opacity hover:bg-blue-600 m-2"
+            >
+            대화 기록 초기화
+          </button>
+
+        </div>  
       )}
     </>
   )

@@ -23,6 +23,7 @@ const SideBar = ({ reqHistory }) => {
          rounded-md m-2 pt-1 pb-1 pl-2 pr-2 
          shadow-[0px_1px_1px_2px_rgba(34,38,58,0.4)]'
          onClick={removeLog}
+         data-testid="clear-history-btn"
         >
             <button>기록 모두 삭제</button>
         </div>
