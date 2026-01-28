@@ -10,7 +10,7 @@ const ChatItems = ({ content }) => {
 
   return (
     <div className={`flex flex-col ${alignment}`}>
-        <a class={`message ${content.who} w-fit break-all whitespace-pre-wrap`}>
+        <a className={`message ${content.who} w-fit break-all whitespace-pre-wrap`}>
           {content.text}
         </a>
         <a className="text-xs text-gray-400 mt-1 mx-1">{hours}: {minutes}</a>
