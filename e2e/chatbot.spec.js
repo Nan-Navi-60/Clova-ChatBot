@@ -21,6 +21,7 @@ test('Case 1: Send message using Enter key and check bot response', async ({ pag
   await expect(botMessage).toBeVisible({ timeout: 10000 });
 });
 
+
 // ❌ Case 2: 전송 버튼 (소스 코드 버그로 실패 예상)
 test('Case 2: Send message using send button', async ({ page }) => {
   const message = '반갑습니다';
@@ -29,10 +30,28 @@ test('Case 2: Send message using send button', async ({ page }) => {
   await expect(page.locator('a.message.user').last()).toHaveText(message);
 });
 
+test('Case 3: Clear all chat messages (Wait for loading to finish)', async ({ page }) => {
+  // 1. 메시지 전송
+  await page.fill('textarea#userInput', '안녕하세요, 초기화 테스트입니다.');
+  await page.press('textarea#userInput', 'Enter');
 
+  // 2. 로딩 스피너(Loading 컴포넌트)가 화면에 나타나는지 먼저 확인
+  // (봇이 응답을 생성하기 시작했음을 의미)
+  const botLoading = page.locator('a.message.bot').filter({ hasText: '...' }); // Loading 텍스트나 SVG가 있다면 조건 추가
+  
+  // 3. '대화 기록 초기화' 버튼 대기
+  // Playwright의 로케이터는 버튼이 생길 때까지 기본 30초 동안 자동으로 재시도하며 기다립니다.
+  const resetBtn = page.getByTestId('reset-btn');
+  
+  // 버튼이 나타날 때까지 대기 (로딩이 끝나면 조건에 의해 렌더링됨)
+  await expect(resetBtn).toBeVisible({ timeout: 10000 });
 
-  // '대화 기록 초기화' 버튼이 나타날 때까지 대기 (ChatBody.jsx 조건: showButton && loading)
-  // 주의: 소스 코드 로직이 이상함 (loading일 때만 버튼 보임). 테스트를 위해 강제로 조건을 맞춤.
+  // 4. 버튼 클릭
+  await resetBtn.click();
+
+  // 5. 결과 확인: 유저 메시지가 0개여야 함
+  await expect(page.locator('a.message.user')).toHaveCount(0);
+});
 
 // ✅ Case 4: 재요청 방지
 test('Case 4: Prevent duplicate requests via Enter key during loading', async ({ page }) => {
