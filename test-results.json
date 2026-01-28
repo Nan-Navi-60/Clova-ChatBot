@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/playwright.config.js",
-    "rootDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+    "configFile": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\playwright.config.js",
+    "rootDir": "C:/woori-workspace/seminar-frontend/Clova-ChatBot/e2e",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -11,20 +11,20 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results",
+        "outputDir": "C:/woori-workspace/seminar-frontend/Clova-ChatBot/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 3
         },
-        "id": "chromium",
-        "name": "chromium",
-        "testDir": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e",
+        "id": "Google Chrome",
+        "name": "Google Chrome",
+        "testDir": "C:/woori-workspace/seminar-frontend/Clova-ChatBot/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -51,7 +51,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.58.0",
-    "workers": 4,
+    "workers": 6,
     "webServer": {
       "command": "npm run start-servers",
       "url": "http://localhost:5173",
@@ -75,33 +75,39 @@
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
               "results": [
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 723,
+                  "duration": 969,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-27T14:47:10.241Z",
+                  "startTime": "2026-01-28T01:28:38.916Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\test-results\\chatbot-Case-1-Send-messag-95639--key-and-check-bot-response-Google-Chrome\\trace.zip"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "c66bd7d676c8947acb91-668c1368fded98c0e561",
+          "id": "c66bd7d676c8947acb91-4df41655f142d1e8d89f",
           "file": "chatbot.spec.js",
           "line": 8,
           "column": 1
         },
         {
-          "title": "Case 2: Send message using send button",
+          "title": "Case 9: Clear all history and manual close",
           "ok": false,
           "tags": [],
           "tests": [
@@ -109,1070 +115,145 @@
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
               "results": [
                 {
                   "workerIndex": 1,
                   "parallelIndex": 1,
-                  "status": "timedOut",
-                  "duration": 30031,
+                  "status": "failed",
+                  "duration": 6403,
                   "error": {
-                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('history-sidebar')\nExpected: not visible\nReceived: visible\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('history-sidebar')\u001b[22m\n\u001b[2m    9 × locator resolved to <img class=\"w-10\" alt=\"scroll\" data-testid=\"history-sidebar\" src=\"https://img.icons8.com/liquid-glass/96/scroll.png\"/>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('history-sidebar')\nExpected: not visible\nReceived: visible\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('history-sidebar')\u001b[22m\n\u001b[2m    9 × locator resolved to <img class=\"w-10\" alt=\"scroll\" data-testid=\"history-sidebar\" src=\"https://img.icons8.com/liquid-glass/96/scroll.png\"/>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n    at C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js:90:29",
+                    "location": {
+                      "file": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                      "column": 29,
+                      "line": 90
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 88 |\u001b[39m   \u001b[90m// 5. [수정] 사이드바 아이콘을 다시 눌러서 닫기\u001b[39m\n \u001b[90m 89 |\u001b[39m   \u001b[36mawait\u001b[39m scrollIcon\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 90 |\u001b[39m   \u001b[36mawait\u001b[39m expect(sidebar)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 91 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m test(\u001b[32m'Case 10: Click history item to resend message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
                   },
                   "errors": [
                     {
-                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                    },
-                    {
                       "location": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js",
-                        "column": 14,
-                        "line": 28
+                        "file": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                        "column": 29,
+                        "line": 90
                       },
-                      "message": "Error: page.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button#sendBtn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled id=\"sendBtn\">Send</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[0m \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m message \u001b[33m=\u001b[39m \u001b[32m'반갑습니다'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'textarea#userInput'\u001b[39m\u001b[33m,\u001b[39m message)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button#sendBtn'\u001b[39m)\u001b[33m;\u001b[39m \n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'a.message.user'\u001b[39m)\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbot.spec.js:28:14\u001b[22m"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('history-sidebar')\nExpected: not visible\nReceived: visible\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('history-sidebar')\u001b[22m\n\u001b[2m    9 × locator resolved to <img class=\"w-10\" alt=\"scroll\" data-testid=\"history-sidebar\" src=\"https://img.icons8.com/liquid-glass/96/scroll.png\"/>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 88 |\u001b[39m   \u001b[90m// 5. [수정] 사이드바 아이콘을 다시 눌러서 닫기\u001b[39m\n \u001b[90m 89 |\u001b[39m   \u001b[36mawait\u001b[39m scrollIcon\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 90 |\u001b[39m   \u001b[36mawait\u001b[39m expect(sidebar)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 91 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m test(\u001b[32m'Case 10: Click history item to resend message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js:90:29\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-27T14:47:10.235Z",
+                  "startTime": "2026-01-28T01:28:38.879Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbot-Case-2-Send-message-using-send-button-chromium/error-context.md"
+                      "path": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\test-results\\chatbot-Case-9-Clear-all-history-and-manual-close-Google-Chrome\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\test-results\\chatbot-Case-9-Clear-all-history-and-manual-close-Google-Chrome\\trace.zip"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                    "column": 29,
+                    "line": 90
+                  }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "c66bd7d676c8947acb91-9042a427c575d2d641eb",
+          "id": "c66bd7d676c8947acb91-e89e876eb6cf31b52766",
           "file": "chatbot.spec.js",
-          "line": 25,
+          "line": 68,
           "column": 1
         },
         {
-          "title": "Case 4: Prevent duplicate requests via Enter key during loading",
-          "ok": true,
+          "title": "Case 10: Click history item to resend message",
+          "ok": false,
           "tags": [],
           "tests": [
             {
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
               "results": [
                 {
                   "workerIndex": 2,
                   "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 785,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 8216,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('history-sidebar').getByText('Repeat this message').first()\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('history-sidebar').getByText('Repeat this message').first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('history-sidebar').getByText('Repeat this message').first()\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('history-sidebar').getByText('Repeat this message').first()\u001b[22m\n\n    at C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js:111:29",
+                    "location": {
+                      "file": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                      "column": 29,
+                      "line": 111
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 109 |\u001b[39m   \n \u001b[90m 110 |\u001b[39m   \u001b[90m// 요소가 나타날 때까지 대기 후 클릭\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m   \u001b[36mawait\u001b[39m expect(historyItem)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m7000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m historyItem\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\n \u001b[90m 114 |\u001b[39m   \u001b[90m// 4. [검증] 클릭 시 자동으로 사이드바가 닫힘\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                        "column": 29,
+                        "line": 111
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('history-sidebar').getByText('Repeat this message').first()\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('history-sidebar').getByText('Repeat this message').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 109 |\u001b[39m   \n \u001b[90m 110 |\u001b[39m   \u001b[90m// 요소가 나타날 때까지 대기 후 클릭\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m   \u001b[36mawait\u001b[39m expect(historyItem)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m7000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m historyItem\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\n \u001b[90m 114 |\u001b[39m   \u001b[90m// 4. [검증] 클릭 시 자동으로 사이드바가 닫힘\u001b[39m\u001b[0m\n\u001b[2m    at C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js:111:29\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-27T14:47:10.240Z",
+                  "startTime": "2026-01-28T01:28:38.848Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\test-results\\chatbot-Case-10-Click-history-item-to-resend-message-Google-Chrome\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\test-results\\chatbot-Case-10-Click-history-item-to-resend-message-Google-Chrome\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\woori-workspace\\seminar-frontend\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                    "column": 29,
+                    "line": 111
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "c66bd7d676c8947acb91-cbe6d026b227dbfe3b68",
+          "id": "c66bd7d676c8947acb91-a74ec58bfb91cc04c673",
           "file": "chatbot.spec.js",
-          "line": 33,
+          "line": 93,
           "column": 1
-        },
-        {
-          "title": "Case 5: Loading indicator displayed",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 721,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-01-27T14:47:10.236Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "c66bd7d676c8947acb91-1ce308e0d2fca48570a6",
-          "file": "chatbot.spec.js",
-          "line": 51,
-          "column": 1
-        },
-        {
-          "title": "Case 6: Timestamp matches current time",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 440,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Expected: \"23: 47\" or \"23: 46\", Actual: \"23: 47\"\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-01-27T14:47:11.238Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "c66bd7d676c8947acb91-8eb9356b4bd4c4ec3f26",
-          "file": "chatbot.spec.js",
-          "line": 59,
-          "column": 1
-        },
-        {
-          "title": "Case 7: Auto-scroll to bottom (Pixel check)",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 4655,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Distance to bottom: 0px\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-01-27T14:47:11.238Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "c66bd7d676c8947acb91-69fe80a5702730840fbf",
-          "file": "chatbot.spec.js",
-          "line": 92,
-          "column": 1
-        },
-        {
-          "title": "Case 8: Shift+Enter creates new line",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 454,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-01-27T14:47:11.308Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "c66bd7d676c8947acb91-1a84e4245b29d245561d",
-          "file": "chatbot.spec.js",
-          "line": 117,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "title": "chatbotdata.spec.js",
-      "file": "chatbotdata.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "금융 챗봇 응답 시나리오 테스트",
-          "file": "chatbotdata.spec.js",
-          "line": 8,
-          "column": 6,
-          "specs": [
-            {
-              "title": "[Case 1] 비대면 계좌 개설 준비물",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 10375,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"계좌 개설을 도와드릴까요? 비대면으로 만드실 때는 본인 명의의 스마트폰과 신분증(주민등록증 또는 운전면허증), 그리고 본인 확인을 위한 다른 은행 계좌번호가 꼭 필요해요. 앱에서 안내하는 대로 천천히 따라와 주시면 금방 만드실 수 있답니다!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"계좌 개설을 도와드릴까요? 비대면으로 만드실 때는 본인 명의의 스마트폰과 신분증(주민등록증 또는 운전면허증), 그리고 본인 확인을 위한 다른 은행 계좌번호가 꼭 필요해요. 앱에서 안내하는 대로 천천히 따라와 주시면 금방 만드실 수 있답니다!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                        "location": {
-                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                          "column": 35,
-                          "line": 32
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                            "column": 35,
-                            "line": 32
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"계좌 개설을 도와드릴까요? 비대면으로 만드실 때는 본인 명의의 스마트폰과 신분증(주민등록증 또는 운전면허증), 그리고 본인 확인을 위한 다른 은행 계좌번호가 꼭 필요해요. 앱에서 안내하는 대로 천천히 따라와 주시면 금방 만드실 수 있답니다!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\u001b[22m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 63
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 10013,
-                          "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"계좌 개설을 도와드릴까요? 비대면으로 만드실 때는 본인 명의의 스마트폰과 신분증(주민등록증 또는 운전면허증), 그리고 본인 확인을 위한 다른 은행 계좌번호가 꼭 필요해요. 앱에서 안내하는 대로 천천히 따라와 주시면 금방 만드실 수 있답니다!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"계좌 개설을 도와드릴까요? 비대면으로 만드실 때는 본인 명의의 스마트폰과 신분증(주민등록증 또는 운전면허증), 그리고 본인 확인을 위한 다른 은행 계좌번호가 꼭 필요해요. 앱에서 안내하는 대로 천천히 따라와 주시면 금방 만드실 수 있답니다!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                            "location": {
-                              "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                              "column": 35,
-                              "line": 32
-                            },
-                            "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                          }
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:11.706Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbotdata-금융-챗봇-응답-시나리오-테스트-Case-1-비대면-계좌-개설-준비물-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                        "column": 35,
-                        "line": 32
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-cc1e94224ca25eef172a",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 2] 청년 우대형 적금 가입 조건",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 10353,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"청년 고객님을 위한 특별한 혜택이군요! 보통 만 19세에서 34세 사이의 청년분들이 대상이고, 직전 연도 신고 소득이 있어야 해요. 가입 시점에 무주택 세대주여야 하는 조건도 있으니, 고객님의 상세 자격을 제가 확인해 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"a\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">a</a>\u001b[22m\n\u001b[2m       - unexpected value \"a\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"청년 고객님을 위한 특별한 혜택이군요! 보통 만 19세에서 34세 사이의 청년분들이 대상이고, 직전 연도 신고 소득이 있어야 해요. 가입 시점에 무주택 세대주여야 하는 조건도 있으니, 고객님의 상세 자격을 제가 확인해 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"a\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">a</a>\u001b[22m\n\u001b[2m       - unexpected value \"a\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                        "location": {
-                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                          "column": 35,
-                          "line": 32
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                            "column": 35,
-                            "line": 32
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"청년 고객님을 위한 특별한 혜택이군요! 보통 만 19세에서 34세 사이의 청년분들이 대상이고, 직전 연도 신고 소득이 있어야 해요. 가입 시점에 무주택 세대주여야 하는 조건도 있으니, 고객님의 상세 자격을 제가 확인해 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"a\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">a</a>\u001b[22m\n\u001b[2m       - unexpected value \"a\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\u001b[22m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 61
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 10005,
-                          "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"청년 고객님을 위한 특별한 혜택이군요! 보통 만 19세에서 34세 사이의 청년분들이 대상이고, 직전 연도 신고 소득이 있어야 해요. 가입 시점에 무주택 세대주여야 하는 조건도 있으니, 고객님의 상세 자격을 제가 확인해 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"a\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">a</a>\u001b[22m\n\u001b[2m       - unexpected value \"a\"\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"청년 고객님을 위한 특별한 혜택이군요! 보통 만 19세에서 34세 사이의 청년분들이 대상이고, 직전 연도 신고 소득이 있어야 해요. 가입 시점에 무주택 세대주여야 하는 조건도 있으니, 고객님의 상세 자격을 제가 확인해 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"a\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">a</a>\u001b[22m\n\u001b[2m       - unexpected value \"a\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                            "location": {
-                              "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                              "column": 35,
-                              "line": 32
-                            },
-                            "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                          }
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:11.802Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbotdata-금융-챗봇-응답-시나리오-테스트-Case-2-청년-우대형-적금-가입-조건-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                        "column": 35,
-                        "line": 32
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-74803dea519ee5c67101",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 3] 안녕하세요",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 10355,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 안녕하세요! 반가워요\u001b[7m. 😊 \u001b[27m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\u001b[31m+ 안녕하세요! 반가워요\u001b[7m! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m       - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 안녕하세요! 반가워요\u001b[7m. 😊 \u001b[27m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\u001b[31m+ 안녕하세요! 반가워요\u001b[7m! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m       - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                        "location": {
-                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                          "column": 35,
-                          "line": 32
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                            "column": 35,
-                            "line": 32
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 안녕하세요! 반가워요\u001b[7m. 😊 \u001b[27m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\u001b[31m+ 안녕하세요! 반가워요\u001b[7m! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m       - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\u001b[22m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 64
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 10009,
-                          "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 안녕하세요! 반가워요\u001b[7m. 😊 \u001b[27m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\u001b[31m+ 안녕하세요! 반가워요\u001b[7m! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m       - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 안녕하세요! 반가워요\u001b[7m. 😊 \u001b[27m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\u001b[31m+ 안녕하세요! 반가워요\u001b[7m! ^^\u001b[27m\u001b[39m\n\u001b[31m+ 고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">안녕하세요! 반가워요! ^^↵고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예…</a>\u001b[22m\n\u001b[2m       - unexpected value \"안녕하세요! 반가워요! ^^\u001b[22m\n\u001b[2m고객님의 든든한 금융 파트너입니다. 무엇을 도와드릴까요? 예적금 금리 비교부터 카드 추천까지 궁금하신 게 있다면 언제든 말씀해 주세요!\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                            "location": {
-                              "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                              "column": 35,
-                              "line": 32
-                            },
-                            "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                          }
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:15.916Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbotdata-금융-챗봇-응답-시나리오-테스트-Case-3-안녕하세요-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                        "column": 35,
-                        "line": 32
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-7f05434fff73526a207c",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 4] 적금 자동이체 날짜 변경",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 10504,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"자동이체 날짜를 바꾸고 싶으시군요! 저희 앱의 [마이페이지 > 자동이체 관리] 메뉴에 들어가시면 등록된 적금을 확인하고 날짜를 직접 변경하실 수 있어요. 혹시 찾기 어려우시면 메뉴로 바로 이동할 수 있는 링크를 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"자동이체 날짜를 바꾸고 싶으시군요! 저희 앱의 [마이페이지 > 자동이체 관리] 메뉴에 들어가시면 등록된 적금을 확인하고 날짜를 직접 변경하실 수 있어요. 혹시 찾기 어려우시면 메뉴로 바로 이동할 수 있는 링크를 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                        "location": {
-                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                          "column": 35,
-                          "line": 32
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                            "column": 35,
-                            "line": 32
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"자동이체 날짜를 바꾸고 싶으시군요! 저희 앱의 [마이페이지 > 자동이체 관리] 메뉴에 들어가시면 등록된 적금을 확인하고 날짜를 직접 변경하실 수 있어요. 혹시 찾기 어려우시면 메뉴로 바로 이동할 수 있는 링크를 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\u001b[22m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 85
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 10018,
-                          "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"자동이체 날짜를 바꾸고 싶으시군요! 저희 앱의 [마이페이지 > 자동이체 관리] 메뉴에 들어가시면 등록된 적금을 확인하고 날짜를 직접 변경하실 수 있어요. 혹시 찾기 어려우시면 메뉴로 바로 이동할 수 있는 링크를 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"자동이체 날짜를 바꾸고 싶으시군요! 저희 앱의 [마이페이지 > 자동이체 관리] 메뉴에 들어가시면 등록된 적금을 확인하고 날짜를 직접 변경하실 수 있어요. 혹시 찾기 어려우시면 메뉴로 바로 이동할 수 있는 링크를 드릴까요?\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                            "location": {
-                              "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                              "column": 35,
-                              "line": 32
-                            },
-                            "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                          }
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:23.084Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbotdata-금융-챗봇-응답-시나리오-테스트-Case-4-적금-자동이체-날짜-변경-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                        "column": 35,
-                        "line": 32
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-63415d6b9aa78a8fa857",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 5] 매달 50만원 적금 추천",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 10490,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"월 50만 원씩 꾸준히 저축하시려는 모습이 정말 멋지세요! 지금은 우대 금리 혜택이 큰 '청년 미래 적금'이나, 조건 없이 높은 기본 금리를 주는 'OO은행 비대면 적금'을 추천드려요. 고객님의 주거래 은행에 맞춰 더 자세히 찾아봐 드릴게요!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"월 50만 원씩 꾸준히 저축하시려는 모습이 정말 멋지세요! 지금은 우대 금리 혜택이 큰 '청년 미래 적금'이나, 조건 없이 높은 기본 금리를 주는 'OO은행 비대면 적금'을 추천드려요. 고객님의 주거래 은행에 맞춰 더 자세히 찾아봐 드릴게요!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                        "location": {
-                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                          "column": 35,
-                          "line": 32
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                            "column": 35,
-                            "line": 32
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"월 50만 원씩 꾸준히 저축하시려는 모습이 정말 멋지세요! 지금은 우대 금리 혜택이 큰 '청년 미래 적금'이나, 조건 없이 높은 기본 금리를 주는 'OO은행 비대면 적금'을 추천드려요. 고객님의 주거래 은행에 맞춰 더 자세히 찾아봐 드릴게요!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\u001b[22m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 85
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 10018,
-                          "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"월 50만 원씩 꾸준히 저축하시려는 모습이 정말 멋지세요! 지금은 우대 금리 혜택이 큰 '청년 미래 적금'이나, 조건 없이 높은 기본 금리를 주는 'OO은행 비대면 적금'을 추천드려요. 고객님의 주거래 은행에 맞춰 더 자세히 찾아봐 드릴게요!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nExpected substring: \u001b[32m\"월 50만 원씩 꾸준히 저축하시려는 모습이 정말 멋지세요! 지금은 우대 금리 혜택이 큰 '청년 미래 적금'이나, 조건 없이 높은 기본 금리를 주는 'OO은행 비대면 적금'을 추천드려요. 고객님의 주거래 은행에 맞춰 더 자세히 찾아봐 드릴게요!\"\u001b[39m\nReceived string:    \u001b[31m\"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.</a>\u001b[22m\n\u001b[2m       - unexpected value \"잘 이해하지 못했어요. 쉽게 설명해주시면 더 좋은 대답을 할 수 있어요.\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                            "location": {
-                              "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                              "column": 35,
-                              "line": 32
-                            },
-                            "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                          }
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:23.133Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbotdata-금융-챗봇-응답-시나리오-테스트-Case-5-매달-50만원-적금-추천-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                        "column": 35,
-                        "line": 32
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-6b14554eb504905c928e",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 6] 요금 알려줘",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 492,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 78
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 114
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:27.267Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-e19aa64199c63400cda5",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 7] 요금 어떻게 계산해",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 447,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 62
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 109
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:27.901Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-950731ec601c2c602816",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 8] 소비 패턴 맞춤 카드 추천",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 439,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 62
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 111
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:28.358Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-7df1fcb90fa3ebd27079",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 9] 이번 달 카드 실적 조회",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 440,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 62
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 106
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:28.808Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-18872399b02196fdf475",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 10] 해외 결제 차단 설정 방법",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 440,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 61
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 115
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:29.258Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-e5a0ce7270f2a85c4e99",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 11] 금리 높은 예금 상품",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 10375,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 지금 가장 이자를 많이 주는 상품을 찾고 계시군요! 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7mOO\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\u001b[31m+ 지금 가장 이자를 많이 주는 상품을 찾고 계시군요!\u001b[43m \u001b[49m\u001b[39m\n\u001b[31m+ 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7m우리\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">지금 가장 이자를 많이 주는 상품을 찾고 계시군요! ↵현재 저축은행권 특판 예금이 연 3…</a>\u001b[22m\n\u001b[2m       - unexpected value \"지금 가장 이자를 많이 주는 상품을 찾고 계시군요! \u001b[22m\n\u001b[2m현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 우리은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 지금 가장 이자를 많이 주는 상품을 찾고 계시군요! 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7mOO\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\u001b[31m+ 지금 가장 이자를 많이 주는 상품을 찾고 계시군요!\u001b[43m \u001b[49m\u001b[39m\n\u001b[31m+ 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7m우리\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">지금 가장 이자를 많이 주는 상품을 찾고 계시군요! ↵현재 저축은행권 특판 예금이 연 3…</a>\u001b[22m\n\u001b[2m       - unexpected value \"지금 가장 이자를 많이 주는 상품을 찾고 계시군요! \u001b[22m\n\u001b[2m현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 우리은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                        "location": {
-                          "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                          "column": 35,
-                          "line": 32
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                            "column": 35,
-                            "line": 32
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 지금 가장 이자를 많이 주는 상품을 찾고 계시군요! 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7mOO\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\u001b[31m+ 지금 가장 이자를 많이 주는 상품을 찾고 계시군요!\u001b[43m \u001b[49m\u001b[39m\n\u001b[31m+ 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7m우리\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">지금 가장 이자를 많이 주는 상품을 찾고 계시군요! ↵현재 저축은행권 특판 예금이 연 3…</a>\u001b[22m\n\u001b[2m       - unexpected value \"지금 가장 이자를 많이 주는 상품을 찾고 계시군요! \u001b[22m\n\u001b[2m현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 우리은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\u001b[22m\n\u001b[2m    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 60
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 10009,
-                          "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 지금 가장 이자를 많이 주는 상품을 찾고 계시군요! 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7mOO\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\u001b[31m+ 지금 가장 이자를 많이 주는 상품을 찾고 계시군요!\u001b[43m \u001b[49m\u001b[39m\n\u001b[31m+ 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7m우리\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">지금 가장 이자를 많이 주는 상품을 찾고 계시군요! ↵현재 저축은행권 특판 예금이 연 3…</a>\u001b[22m\n\u001b[2m       - unexpected value \"지금 가장 이자를 많이 주는 상품을 찾고 계시군요! \u001b[22m\n\u001b[2m현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 우리은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\"\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a.message.bot').last()\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 2\u001b[39m\n\n\u001b[32m- 지금 가장 이자를 많이 주는 상품을 찾고 계시군요! 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7mOO\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\u001b[31m+ 지금 가장 이자를 많이 주는 상품을 찾고 계시군요!\u001b[43m \u001b[49m\u001b[39m\n\u001b[31m+ 현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 \u001b[7m우리\u001b[27m은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.bot').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <a class=\"message bot w-fit break-all\">…</a>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    12 × locator resolved to <a class=\"message bot w-fit break-all whitespace-pre-wrap\">지금 가장 이자를 많이 주는 상품을 찾고 계시군요! ↵현재 저축은행권 특판 예금이 연 3…</a>\u001b[22m\n\u001b[2m       - unexpected value \"지금 가장 이자를 많이 주는 상품을 찾고 계시군요! \u001b[22m\n\u001b[2m현재 저축은행권 특판 예금이 연 3.2% 이상으로 가장 인기가 많아요. 1금융권 중에서는 우리은행의 비대면 전용 예금이 금리가 높은 편인데, 실시간 순위를 보여드릴까요?\"\u001b[22m\n\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:32:35\n    at /Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js:27:18",
-                            "location": {
-                              "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                              "column": 35,
-                              "line": 32
-                            },
-                            "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \n \u001b[90m 31 |\u001b[39m         \u001b[90m// 답변이 올 때까지 최대 10초 대기하며 텍스트 포함 여부를 체크합니다.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(lastMessage)\u001b[33m.\u001b[39mtoContainText(data\u001b[33m.\u001b[39manswer\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   }\u001b[0m"
-                          }
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:29.708Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/test-results/chatbotdata-금융-챗봇-응답-시나리오-테스트-Case-11-금리-높은-예금-상품-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/yeong/Documents/wooriFISA/frontend-seminar/Clova-ChatBot/e2e/chatbotdata.spec.js",
-                        "column": 35,
-                        "line": 32
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-0651feec281578123344",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 12] 정기예금 자동 재예치 여부",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 598,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 82
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 113
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:34.840Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-dee7f287a9a220eac931",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            },
-            {
-              "title": "[Case 13] 예금 중도해지 이자",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 600,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "질문을 입력하고 엔터 키를 누릅니다.",
-                          "duration": 83
-                        },
-                        {
-                          "title": "챗봇의 답변이 데이터와 일치하는지 확인합니다.",
-                          "duration": 113
-                        }
-                      ],
-                      "startTime": "2026-01-27T14:47:34.846Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d06778b9ea07fab4093b-43def9c5ea96b92900c0",
-              "file": "chatbotdata.spec.js",
-              "line": 15,
-              "column": 5
-            }
-          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-27T14:47:08.728Z",
-    "duration": 31848.309,
-    "expected": 13,
+    "startTime": "2026-01-28T01:28:36.658Z",
+    "duration": 11000.166000000001,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 7,
+    "unexpected": 2,
     "flaky": 0
   }
 }
