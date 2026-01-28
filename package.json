@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "start": "node server.js",
     "start-servers": "npm start & npm run dev",
-    "test-and-report": "npx playwright test", 
+    "test-and-report": "node scripts/ci-report.cjs && powershell -File scripts/propose-improvements.ps1 -testFile e2e/chatbot.spec.js",
+    "propose-improvements": "powershell -File scripts/propose-improvements.ps1 -testFile e2e/chatbot.spec.js", 
     "test1":"node scripts/ci-report.cjs"
   },
   "dependencies": {

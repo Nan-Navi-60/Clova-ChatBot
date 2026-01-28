@@ -51,23 +51,62 @@ function generateSummaryAndSuggestions() {
       walkSuite(suite, resultsByFile[fileName]);
     });
 
-    // 슬랙 메시지 구성
-    // TODO
+    // 텍스트 리포트 생성
     const statusEmoji = overallFailed > 0 ? '❌' : '✅';
-    let report = `${statusEmoji} *Playwright UI 자동화 테스트 결과*\n\n`;
-    report += `📊 *전체 요약: 총 ${overallTotal}개 TC*\n• 성공: ${overallPassed} | 실패: ${overallFailed}\n\n`;
+    let textReport = `${statusEmoji} Playwright UI 자동화 테스트 결과\n\n`;
+    textReport += `📊 전체 요약: 총 ${overallTotal}개 TC\n• 성공: ${overallPassed} | 실패: ${overallFailed}\n\n`;
+
+    // 슬랙 블록 킷 리포트 생성
+    const blockReport = [
+      {
+        type: 'header',
+        text: {
+          type: 'plain_text',
+          text: `${statusEmoji} Playwright UI 자동화 테스트 결과`,
+          emoji: true,
+        },
+      },
+      {
+        type: 'section',
+        fields: [
+          { type: 'mrkdwn', text: `*📊 전체 요약*\n총 ${overallTotal}개` },
+          { type: 'mrkdwn', text: `*✅ 성공*\n${overallPassed}개` },
+          { type: 'mrkdwn', text: `*❌ 실패*\n${overallFailed}개` },
+        ],
+      },
+      { type: 'divider' },
+    ];
 
     Object.keys(resultsByFile).forEach(file => {
       const stats = resultsByFile[file];
-      report += `${stats.failed > 0 ? '🔺' : '🔹'} *${file}*\n`;
-      report += `  └  총 ${stats.total}개 중 ${stats.passed}개 성공\n`;
+      const fileSummaryText = `${stats.failed > 0 ? '🔺' : '🔹'} *${file}*\n  └  총 ${stats.total}개 중 ${stats.passed}개 성공\n`;
+      textReport += fileSummaryText.replace(/\*/g, ''); // 텍스트 파일에서는 마크다운 제거
+
+      blockReport.push({
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `${stats.failed > 0 ? '🔺' : '🔹'} *${file}*  (${stats.passed}/${stats.total} 성공)`,
+        },
+      });
+
       if (stats.failed > 0) {
-        report += `  ⚠️ _실패 건: ${stats.failures.map(f => f.title).join(', ')}_\n`;
+        const failureTitles = stats.failures.map(f => f.title).join(', ');
+        textReport += `  ⚠️ 실패 건: ${failureTitles}\n`;
+        
+        const failureDetails = stats.failures.map(f => `> • ${f.title}`).join('\n');
+        blockReport.push({
+          type: 'section',
+          text: {
+            type: 'mrkdwn',
+            text: `*실패한 테스트:*\n${failureDetails}`,
+          },
+        });
       }
-      report += `\n`;
+      textReport += '\n';
     });
 
-    return report;
+    return { blockReport, textReport };
   } catch (err) {
     return `❌ 리포트 생성 실패: ${err.message}`;
   }

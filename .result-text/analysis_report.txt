@@ -1,0 +1,9 @@
+❌ Playwright UI 자동화 테스트 결과
+
+📊 전체 요약: 총 10개 TC
+• 성공: 8 | 실패: 2
+
+🔺 chatbot.spec.js
+  └  총 10개 중 8개 성공
+  ⚠️ 실패 건: Case 2: Send message using send button, Case 4: Prevent duplicate requests via Enter key during loading
+
