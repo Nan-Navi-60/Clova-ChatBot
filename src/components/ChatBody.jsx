@@ -4,8 +4,7 @@ import Loading from '../ui/Loading';
 
 const ChatBody = ({ messages, loading, resetBtn }) => {
   
-  const chatList = messages.map((chat, idx) => (
-  <ChatItems key={chat.id ?? idx} content={chat} />));
+  const chatList = messages.map(chat => <ChatItems content={chat} />)
   const chatContainerRef = useRef(null);
   const [showButton, setShowButton] = useState(false);
 
@@ -35,29 +34,25 @@ const ChatBody = ({ messages, loading, resetBtn }) => {
   },[messages] );
 
   const loadingSpiner = () => {
-    return <a className={`message bot w-fit break-all`}><Loading /></a>
+    return <a class={`message bot w-fit break-all`}><Loading /></a>
   }
 
   return (
     <>
-        <div id="chat-body" className="top-15 chat-box-body flex flex-col h-full" ref={chatContainerRef}>
+        <div id="chat-body" class="top-15 chat-box-body flex flex-col h-full" ref={chatContainerRef}>
             {chatList}
             {!loading && loadingSpiner()}
         </div>
         {showButton && loading && (
-        <div data-testid="reset-btn">
-
-          <button 
-            onClick={() => {
-              resetBtn();
-              setShowButton(false);
-            }}
-            className="bottom-5 bg-blue-500 text-white p-2 rounded-full shadow-lg transition-opacity hover:bg-blue-600 m-2"
-            >
-            대화 기록 초기화
-          </button>
-
-        </div>  
+        <button 
+          onClick={() => {
+            resetBtn();
+            setShowButton(false);
+          }}
+          className="bottom-5 bg-blue-500 text-white p-2 rounded-full shadow-lg transition-opacity hover:bg-blue-600 m-2"
+        >
+          대화 기록 초기화
+        </button>
       )}
     </>
   )
