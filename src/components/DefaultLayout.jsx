@@ -2,7 +2,7 @@ import React from 'react'
 
 const DefaultLayout = ({ children }) => {
   return (
-    <div class="chat-box">
+    <div className="chat-box">
         {children}
     </div>
   )

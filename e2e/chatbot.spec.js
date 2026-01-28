@@ -157,3 +157,112 @@ test('Case 8: Shift+Enter creates new line', async ({ page }) => {
   // 5. 전송되지 않았는지 확인 (유저 메시지 0개)
   await expect(page.locator('a.message.user')).toHaveCount(0);
 });
+
+
+
+//✅ Case 9History 
+
+test('Case 9 : History Interaction', async ({ page }) => {
+  // ===============================
+  // Arrange: 메시지 + 봇 응답 생성
+  // ===============================
+  await page.goto('/');
+
+  // 첫 번째 메시지
+  await page.fill('textarea#userInput', '첫 번째 메시지');
+  await page.press('textarea#userInput', 'Enter');
+  await expect(page.locator('a.message.bot').last())
+    .toBeVisible({ timeout: 10000 });
+
+  // 두 번째 메시지
+  await page.fill('textarea#userInput', '두 번째 메시지');
+  await page.press('textarea#userInput', 'Enter');
+  await expect(page.locator('a.message.bot').last())
+    .toBeVisible({ timeout: 10000 });
+
+  // ===============================
+  // Act 1: History 사이드바 열기
+  // ===============================
+  await page.getByTestId('history-toggle').click();
+
+  const sidebar = page.getByTestId('history-sidebar');
+  await expect(sidebar).toBeVisible();
+
+  // ===============================
+  // Assert 1: History 데이터 존재
+  // ===============================
+  const historyItems = page.getByTestId('history-item');
+  const countBefore = await historyItems.count();
+  expect(countBefore).toBeGreaterThan(0);
+
+  // ===============================
+  // Act 2: History 전체 삭제
+  // ===============================
+  const clearBtn = page.getByTestId('clear-history-btn');
+  await expect(clearBtn).toBeVisible();
+  await clearBtn.click();
+
+  // ===============================
+  // Assert 2: History 삭제 확인
+  // ===============================
+  await expect(historyItems).toHaveCount(0);
+
+  // ===============================
+  // Act 3: History 닫기
+  // ===============================
+  await page.getByTestId('history-toggle').click();
+
+  // ===============================
+  // Assert 3: 사이드바 닫힘
+  // ===============================
+  await expect(page.getByTestId('history-sidebar')).toHaveCount(0);
+});
+
+// ✅ Case 10 : History message resend
+test('Case 10 : History message resend', async ({ page }) => {
+  await page.goto('/');
+
+  // ===============================
+  // Arrange: 메시지 1개 생성
+  // ===============================
+  const originalMessage = '히스토리 테스트 메시지';
+
+  await page.fill('textarea#userInput', originalMessage);
+  await page.press('textarea#userInput', 'Enter');
+
+  // 봇 응답 대기
+  await expect(page.locator('a.message.bot').last())
+    .toBeVisible({ timeout: 10000 });
+
+  // ===============================
+  // Act 1: History 열기
+  // ===============================
+  await page.getByTestId('history-toggle').click();
+  await expect(page.getByTestId('history-sidebar')).toBeVisible();
+
+  // ===============================
+  // Act 2: History 메시지 클릭
+  // ===============================
+  const historyItem = page.getByTestId('history-item').first();
+  await historyItem.click();
+
+  // ===============================
+  // Assert 1: 사이드바 닫힘
+  // ===============================
+  await expect(page.getByTestId('history-sidebar')).toHaveCount(0);
+
+  // ===============================
+  // Assert 2: 메시지가 다시 전송됨
+  // ===============================
+  const userMessages = page.locator('a.message.user');
+
+  // 같은 텍스트가 2번 존재해야 함
+  await expect(userMessages.filter({ hasText: originalMessage }))
+    .toHaveCount(2);
+
+  // // ===============================
+  // // Assert 3: 새 봇 응답 생성
+  // // ===============================
+  // await expect(page.locator('a.message.bot').last())
+  //   .toBeVisible({ timeout: 10000 });
+});
