@@ -1,11 +1,11 @@
-# 🤖 Agentic Frontend Test Automation
+#  Agentic Frontend Test Automation
 > **AI 에이전트를 활용한 프론트엔드 테스트 자동화 및 Closed-loop 유지보수 시스템**
 
 AI를 단순한 도구가 아닌 독립적인 **'에이전트(Agent)'** 단위로 설계하여, 테스트 시나리오 설계부터 결과 분석, 코드 수정 제안까지 수행하는 지능형 자동화 솔루션입니다.
 
 ---
 
-## 📌 1. Project Overview
+##  1. Project Overview
 
 ### 배경 및 필요성
 * **인적 리소스의 한계**: 복잡한 서비스의 반복적인 수동 테스트는 비효율적이며 휴먼 에러 발생 확률이 높음.
@@ -18,7 +18,7 @@ AI를 단순한 도구가 아닌 독립적인 **'에이전트(Agent)'** 단위�
 
 ---
 
-## 🏗 2. System Architecture & Tech Stack
+##  2. System Architecture & Tech Stack
 
 ### 기술 스택
 | 분류 | 기술 |
@@ -34,8 +34,7 @@ AI를 단순한 도구가 아닌 독립적인 **'에이전트(Agent)'** 단위�
 * **Git Master**: 코드 변경 요약, PR 리뷰 및 수정 제안 자동화.
 
 ---
-
-## 🚀 3. Key Features
+##  3. Key Features
 
 ### 1) 금융 챗봇(Woori-CLOVA) E2E 테스트
 * **입력 폼 검증**: 사용자 데이터 유효성 검증 로직 테스트.
@@ -50,7 +49,7 @@ AI를 단순한 도구가 아닌 독립적인 **'에이전트(Agent)'** 단위�
 
 ---
 
-## 📈 4. Expected Effects
+##  4. Expected Effects
 * **QA 사이클 단축**: 자동화를 통한 즉각적인 피드백 및 테스트 비용 절감.
 * **코드 안정성 확보**: 리팩토링 시 기존 기능의 정상 작동을 보장하는 안전망 구축.
 * **생산성 극대화**: 사람이 찾기 어려운 논리적 오류를 탐지하고 수정 대안 제시.
