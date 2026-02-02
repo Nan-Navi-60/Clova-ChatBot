@@ -1,0 +1,481 @@
+{
+  "config": {
+    "configFile": "C:\\woori-workspace\\Clova-ChatBot\\playwright.config.js",
+    "rootDir": "C:/woori-workspace/Clova-ChatBot/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 6
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/woori-workspace/Clova-ChatBot/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "Google Chrome",
+        "name": "Google Chrome",
+        "testDir": "C:/woori-workspace/Clova-ChatBot/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.0",
+    "workers": 6,
+    "webServer": {
+      "command": "npm run start-servers",
+      "url": "http://localhost:5173",
+      "timeout": 120000,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "chatbot.spec.js",
+      "file": "chatbot.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Case 1: Send message using Enter key and check bot response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1557,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:36.907Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-4df41655f142d1e8d89f",
+          "file": "chatbot.spec.js",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "Case 2: Send message using send button",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 30037,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                        "column": 14,
+                        "line": 29
+                      },
+                      "message": "Error: page.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button#sendBtn')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled id=\"sendBtn\">Send</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    54 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[0m \u001b[90m 27 |\u001b[39m   \u001b[36mconst\u001b[39m message \u001b[33m=\u001b[39m \u001b[32m'반갑습니다'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'textarea#userInput'\u001b[39m\u001b[33m,\u001b[39m message)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button#sendBtn'\u001b[39m)\u001b[33m;\u001b[39m \n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'a.message.user'\u001b[39m)\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(message)\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js:29:14\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:36.843Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\woori-workspace\\Clova-ChatBot\\test-results\\chatbot-Case-2-Send-message-using-send-button-Google-Chrome\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-59a85c86ca9929600df3",
+          "file": "chatbot.spec.js",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "Case 3: Clear all chat messages (Wait for loading to finish)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1877,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:36.921Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-7f2d3047f7c85e36abd9",
+          "file": "chatbot.spec.js",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "Case 4: Prevent duplicate requests via Enter key during loading",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 6631,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('a.message.user')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.user')\u001b[22m\n\u001b[2m    9 × locator resolved to 2 elements\u001b[22m\n\u001b[2m      - unexpected value \"2\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('a.message.user')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.user')\u001b[22m\n\u001b[2m    9 × locator resolved to 2 elements\u001b[22m\n\u001b[2m      - unexpected value \"2\"\u001b[22m\n\n    at C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js:68:30",
+                    "location": {
+                      "file": "C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                      "column": 30,
+                      "line": 68
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 66 |\u001b[39m   \u001b[90m// 3. 봇의 응답이 오기 전까지 유저 메시지는 1개여야 함\u001b[39m\n \u001b[90m 67 |\u001b[39m   \u001b[36mconst\u001b[39m userMessages \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'a.message.user'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m   \u001b[36mawait\u001b[39m expect(userMessages)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m   \n \u001b[90m 70 |\u001b[39m   \u001b[90m// 4. (참고) 버튼도 비활성화 상태인지 함께 체크\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'button#sendBtn'\u001b[39m))\u001b[33m.\u001b[39mtoBeDisabled()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                        "column": 30,
+                        "line": 68
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('a.message.user')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('a.message.user')\u001b[22m\n\u001b[2m    9 × locator resolved to 2 elements\u001b[22m\n\u001b[2m      - unexpected value \"2\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 66 |\u001b[39m   \u001b[90m// 3. 봇의 응답이 오기 전까지 유저 메시지는 1개여야 함\u001b[39m\n \u001b[90m 67 |\u001b[39m   \u001b[36mconst\u001b[39m userMessages \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'a.message.user'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m   \u001b[36mawait\u001b[39m expect(userMessages)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m   \n \u001b[90m 70 |\u001b[39m   \u001b[90m// 4. (참고) 버튼도 비활성화 상태인지 함께 체크\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'button#sendBtn'\u001b[39m))\u001b[33m.\u001b[39mtoBeDisabled()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js:68:30\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:36.938Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\woori-workspace\\Clova-ChatBot\\test-results\\chatbot-Case-4-Prevent-dup-eaa26-ia-Enter-key-during-loading-Google-Chrome\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\woori-workspace\\Clova-ChatBot\\e2e\\chatbot.spec.js",
+                    "column": 30,
+                    "line": 68
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-56084a669ce256fd167e",
+          "file": "chatbot.spec.js",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "Case 5: Loading indicator displayed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 1541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:36.886Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-dd6caf7bec6df740015f",
+          "file": "chatbot.spec.js",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "Case 6: Timestamp matches current time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
+                  "status": "passed",
+                  "duration": 1536,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Expected: \"15: 43\" or \"15: 42\", Actual: \"15: 43\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:36.919Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-f15a15ed4d9879b07057",
+          "file": "chatbot.spec.js",
+          "line": 83,
+          "column": 1
+        },
+        {
+          "title": "Case 7: Auto-scroll to bottom (Pixel check)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4877,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Distance to bottom: 0px\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:38.809Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-a7fc36f70c351798ea95",
+          "file": "chatbot.spec.js",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "Case 8: Shift+Enter creates new line",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 709,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:38.856Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-625bf121fba88c96e19e",
+          "file": "chatbot.spec.js",
+          "line": 141,
+          "column": 1
+        },
+        {
+          "title": "Case 9 : History Interaction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
+                  "status": "passed",
+                  "duration": 816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:39.056Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-7a4ed295007b74d4221b",
+          "file": "chatbot.spec.js",
+          "line": 165,
+          "column": 1
+        },
+        {
+          "title": "Case 10 : History message resend",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 714,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-28T06:43:39.120Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bd7d676c8947acb91-4f67f1403505f24c27a7",
+          "file": "chatbot.spec.js",
+          "line": 222,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-28T06:43:35.234Z",
+    "duration": 32083.061,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
