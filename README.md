@@ -1,1 +1,63 @@
-🤖 Agentic Frontend Test AutomationAI 에이전트를 활용한 프론트엔드 테스트 자동화 및 Closed-loop 유지보수 시스템단순한 테스트 코드 생성을 넘어, AI 에이전트가 테스트 시나리오 설계, 실행, 결과 분석, 그리고 코드 수정 제안까지 담당하는 지능형 자동화 솔루션입니다.📌 1. Project Overview배경 및 필요성인적 리소스의 한계: 서비스 복잡도 증가에 따른 수동 테스트의 비효율성 및 휴먼 에러 발생.문서화 부하: 테스트 결과 정리와 개발 일지 작성에 소요되는 주객전도 현상 방지.프롬프트 공학의 한계 극복: 단순 요청이 아닌 '에이전트' 단위의 설계로 복잡한 비즈니스 로직(비동기 처리, Throttling 등) 검증.목표AI를 '도구'가 아닌 '에이전트'로 활용한 E2E(End-to-End) 테스트 환경 구축.테스트 실패 시 원인 분석 및 수정 코드 제안까지 이어지는 개발 생산성 극대화.🏗 2. System Architecture & Workflow기술 스택 (Tech Stack)분류기술비고FrameworkReact, TypeScript금융 챗봇 기반 리팩토링 프로젝트Testing ToolPlaywrightE2E 테스팅 및 브라우저 제어AI ModelGemini 2.5 FlashGemini-CLI 기반 프로젝트 컨텍스트 분석AutomationShell Script / Node.js테스트 실행 및 결과 피드백 루프 구현에이전트 역할 분담SDET Agent: 테스트 설계 및 Playwright 기반 아키텍처 구축.Documentation Specialist: 시나리오 구조화 및 개발 일지/보고서 자동 생성.Git Master: 코드 변경 요약, PR 리뷰 및 수정 제안 자동화.🚀 3. Key Features1) 금융 챗봇 E2E 자동 테스트Validation: 사용자 입력 폼 및 예외 상황 검증.Async Logic: API 호출 및 데이터 렌더링 동기화 테스트.Edge Case: 중복 클릭 방지(Throttling) 및 디바운싱 로직 검증.2) Closed-loop 테스트 자동화코드 분석: Gemini-CLI가 프로젝트 구조와 플로우 차트를 학습.테스트 생성: 기능별 라벨링(data-cy)을 감지하여 테스트 스크립트 작성.결과 피드백: test-results.json 분석 후 실패 원인 파악.수정 제안: AI가 개선된 소스코드를 제안하고 승인 시 자동 리팩토링.🔍 4. Troubleshooting & Deep Dive비동기 처리 난제: AI가 setTimeout이나 Promise 흐름을 놓치는 경우, 실행 컨텍스트(Context) 주입 및 Mocking 데이터 최적화로 해결.환각 현상(Hallucination) 방지: 테스트 에러가 없는데 있다고 하는 경우를 대비해, 실제 실행 결과 파일과 소스코드를 대조하는 검증 로직 추가.📈 5. Expected EffectsQA 사이클 단축: 수동 검증 대비 테스트 속도 및 정확도 비약적 향상.안전한 리팩토링: 테스트 코드가 안전망 역할을 하여 기존 기능의 안정성 확보.유지보수 비용 절감: AI의 코드 수정 제안 기능을 통해 버그 수정 비용 감소.
+# 🤖 Agentic Frontend Test Automation
+> **AI 에이전트를 활용한 프론트엔드 테스트 자동화 및 Closed-loop 유지보수 시스템**
+
+AI를 단순한 도구가 아닌 독립적인 **'에이전트(Agent)'** 단위로 설계하여, 테스트 시나리오 설계부터 결과 분석, 코드 수정 제안까지 수행하는 지능형 자동화 솔루션입니다.
+
+---
+
+## 📌 1. Project Overview
+
+### 배경 및 필요성
+* **인적 리소스의 한계**: 복잡한 서비스의 반복적인 수동 테스트는 비효율적이며 휴먼 에러 발생 확률이 높음.
+* **문서화 부하**: 테스트 결과 정리 및 변경 사항 문서화에 소요되는 시간 과다.
+* **프롬프트 공학의 한계 극복**: 비동기 로직, 중복 입력 방지 등 복잡한 비즈니스 로직을 검증하기 위해 깊이 있는 AI 에이전트 설계 필요.
+
+### 목표
+* AI 에이전트를 통한 프론트엔드 개발 생산성 극대화.
+* 테스트 실패 시 원인 분석 및 해결책 제안까지 이어지는 **'Closed-loop'** 환경 구축.
+
+---
+
+## 🏗 2. System Architecture & Tech Stack
+
+### 기술 스택
+| 분류 | 기술 |
+| :--- | :--- |
+| **Framework** | `React`, `TypeScript` |
+| **Testing Tool** | `Playwright` |
+| **AI Model** | `Gemini 2.5 Flash` (Gemini-CLI) |
+| **Automation** | `Shell Script`, `Node.js` |
+
+### AI 에이전트 역할 분담
+* **SDET Agent**: 테스트 설계 및 Playwright 기반 아키텍처 구축.
+* **Documentation Specialist**: 테스트 시나리오 구조화 및 개발 일지 자동 생성.
+* **Git Master**: 코드 변경 요약, PR 리뷰 및 수정 제안 자동화.
+
+---
+
+## 🚀 3. Key Features
+
+### 1) 금융 챗봇(Woori-CLOVA) E2E 테스트
+* **입력 폼 검증**: 사용자 데이터 유효성 검증 로직 테스트.
+* **비동기 통신**: API 호출 및 데이터 렌더링(Async/Sync) 흐름 체크.
+* **성능 로직**: Throttling 및 Debouncing(3초 대기 등) 정상 작동 여부 확인.
+
+### 2) 지능형 자동화 워크플로우
+1. **분석**: `Gemini-CLI`가 프로젝트 전체 흐름과 코드 구조를 파악.
+2. **생성**: 기능별 데이터 라벨링(`data-cy`)을 감지하여 최적의 테스트 코드 작성.
+3. **실행**: 생성된 코드를 기반으로 자동 테스트 수행 및 결과(`json`) 반환.
+4. **개선**: 테스트 결과 분석 후, 실제 파일의 코드 수정 및 리팩토링 방안 제안.
+
+---
+
+## 📈 4. Expected Effects
+* **QA 사이클 단축**: 자동화를 통한 즉각적인 피드백 및 테스트 비용 절감.
+* **코드 안정성 확보**: 리팩토링 시 기존 기능의 정상 작동을 보장하는 안전망 구축.
+* **생산성 극대화**: 사람이 찾기 어려운 논리적 오류를 탐지하고 수정 대안 제시.
+
+---
+
+## 👨‍💻 Team: Woori FISA (Finance IT)
+* **남민영**: 테스트 시나리오 설계 및 테스트 코드 검증
+* **박제영**: AI 에이전트 실행 및 자동화 파이프라인 구축
+* **조유진**: 테스트 결과 분석 및 AI 코드 수정 제안 로직 설계
