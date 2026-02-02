@@ -17,7 +17,7 @@ const SideBar = ({ reqHistory }) => {
     }
 
   return (
-    <div data-testid="history-sidebar" className='absolute overflow-y-auto bottom-0 z-10 w-full bg-sky-600 m-0 right-0 top-15'>
+    <div className='absolute overflow-y-auto bottom-0 z-10 w-full bg-sky-600 m-0 right-0 top-15'>
         <div 
          className='justify-self-end text-white bg-rose-700
          rounded-md m-2 pt-1 pb-1 pl-2 pr-2 

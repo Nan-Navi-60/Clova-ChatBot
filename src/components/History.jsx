@@ -15,7 +15,7 @@ const History = ({reqHistory ,message}) => {
     }
 
   return (
-    <div data-testid="history-item"
+    <div
         onClick={() => reqHistory(message.text)}
         className='flex flex-col items-start
          bg-sky-200 rounded-2xl
